@@ -1,10 +1,13 @@
 ﻿Imports System.Windows.Forms
+Imports MySql.Data.MySqlClient
+Imports System.IO
+Imports System.Text
 
 Public Class frmMain
 
 #Region "User"
     Private _user As InternalUser
-
+    Public bs As BiometricScanner.BiometricScanner
     Public ReadOnly Property User As InternalUser
         Get
             Return _user
@@ -34,12 +37,15 @@ Public Class frmMain
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
+        bs = New BiometricScanner.BiometricScanner
+        performLogin()
     End Sub
 
     Private Sub LoginToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoginToolStripMenuItem.Click
-        If dlgLogin.ShowDialog = Windows.Forms.DialogResult.OK Then
-            LogIn(dlgLogin.User)
-        End If
+        performLogin()
+        'If dlgLogin.ShowDialog = Windows.Forms.DialogResult.OK Then
+        '    LogIn(dlgLogin.User)
+        'End If
     End Sub
 
     Private Sub LogIn(user As InternalUser)
@@ -92,5 +98,55 @@ Public Class frmMain
 
     Private Sub ConsultationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultationToolStripMenuItem.Click
         frmConsultation.BringToFront()
+    End Sub
+
+    Private Sub performLogin()
+        Dim login = New frmLogin(bs)
+        login.ShowDialog()
+        If Not login.isCancel Then
+            Try
+                Me._user = New InternalUser(login.getStaffID)
+                MyDetailsToolStripMenuItem.Visible = True
+                LogoutToolStripMenuItem.Visible = True
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error during login!")
+            End Try
+        End If
+    End Sub
+
+    Private Sub MyDetailsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MyDetailsToolStripMenuItem.Click
+        Dim MySQLConn As MySqlConnection = New MySqlConnection(My.Resources.connectionString)
+        Dim token As String = generateToken()
+        Dim cmd As MySqlCommand = New MySqlCommand("INSERT INTO `token` (`token_id`,`staff_id`, `token`) VALUES (NULL,@staff_id, @token);", MySQLConn)
+        cmd.Parameters.AddWithValue("@staff_id", Me._user.StaffId)
+        cmd.Parameters.AddWithValue("@token", token)
+        MySQLConn.Open()
+        cmd.ExecuteNonQuery()
+        MySQLConn.Close()
+
+        Dim url As String = String.Format("http://localhost:8080/holistic/login.jsp?token={0}&staff={1}", token, Me._user.StaffId)
+        Dim pathToChrome As String = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+        If File.Exists(pathToChrome) Then
+            Process.Start(pathToChrome, url) 'opens in chrome
+        Else
+            Process.Start(url) 'opens in default web browser
+        End If
+
+    End Sub
+
+    Private Function generateToken() As String
+        Dim s As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        Randomize()
+        Dim r As New Random
+        Dim sb As New StringBuilder
+        For i As Integer = 1 To 64
+            sb.Append(s.Substring(r.Next(0, s.Length - 1), 1))
+        Next
+        Return sb.ToString()
+    End Function
+
+    Private Sub AdministrationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministrationToolStripMenuItem.Click
+        frmAdministration.bs = Me.bs
+        frmAdministration.Show()
     End Sub
 End Class

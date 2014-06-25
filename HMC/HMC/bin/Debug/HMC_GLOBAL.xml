@@ -2,24 +2,20 @@
 <doc>
 <assembly>
 <name>
-HMC
+HMC_GLOBAL
 </name>
 </assembly>
 <members>
-<member name="P:HMC.My.Resources.Resources.ResourceManager">
+<member name="P:HMC_GLOBAL.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
-</member><member name="P:HMC.My.Resources.Resources.Culture">
+</member><member name="P:HMC_GLOBAL.My.Resources.Resources.Culture">
 	<summary>
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
-</member><member name="P:HMC.My.Resources.Resources.connectionString">
-	<summary>
-  Looks up a localized string similar to server=localhost; user id=root; password=; database=holistic.
-</summary>
-</member><member name="T:HMC.My.Resources.Resources">
+</member><member name="T:HMC_GLOBAL.My.Resources.Resources">
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>

@@ -1,7 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HMC", "HMC\HMC.vbproj", "{FD430E8B-E192-4BB1-A9C6-28C54F24527C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BiometricScanner", "..\..\..\..\Source\Repos\hmc-client\BiometricTesterApplication\BiometricScanner\BiometricScanner.vbproj", "{28AFA630-D522-4B6E-BDC5-31CA36AC34BA}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "hmc-Prototype", "..\..\..\..\Source\Repos\hmc-client\hmc-Prototype\hmc-Prototype\hmc-Prototype.vbproj", "{E2CE0890-FE3D-475B-B35E-B7A76B27423D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +19,14 @@ Global
 		{FD430E8B-E192-4BB1-A9C6-28C54F24527C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD430E8B-E192-4BB1-A9C6-28C54F24527C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD430E8B-E192-4BB1-A9C6-28C54F24527C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28AFA630-D522-4B6E-BDC5-31CA36AC34BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28AFA630-D522-4B6E-BDC5-31CA36AC34BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28AFA630-D522-4B6E-BDC5-31CA36AC34BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28AFA630-D522-4B6E-BDC5-31CA36AC34BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2CE0890-FE3D-475B-B35E-B7A76B27423D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2CE0890-FE3D-475B-B35E-B7A76B27423D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2CE0890-FE3D-475B-B35E-B7A76B27423D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2CE0890-FE3D-475B-B35E-B7A76B27423D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

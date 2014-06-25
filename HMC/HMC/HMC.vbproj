@@ -46,9 +46,17 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.8.3\Assemblies\v4.5\MySql.Data.dll</HintPath>
+    <Reference Include="mysql.data">
+      <HintPath>..\..\..\..\..\Downloads\mysql-connector-net-6.6.6-noinstall\v4\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.data.entity">
+      <HintPath>..\..\..\..\..\Downloads\mysql-connector-net-6.6.6-noinstall\v4\mysql.data.entity.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.visualstudio">
+      <HintPath>..\..\..\..\..\Downloads\mysql-connector-net-6.6.6-noinstall\v4\mysql.visualstudio.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.web">
+      <HintPath>..\..\..\..\..\Downloads\mysql-connector-net-6.6.6-noinstall\v4\mysql.web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -86,6 +94,30 @@
     <Compile Include="dlgInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAdminEditStaff.Designer.vb">
+      <DependentUpon>frmAdminEditStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminEditStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminEditUser.Designer.vb">
+      <DependentUpon>frmAdminEditUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminEditUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministration.Designer.vb">
+      <DependentUpon>frmAdministration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminUploadRoster.Designer.vb">
+      <DependentUpon>frmAdminUploadRoster.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUploadRoster.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAppointments.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -111,10 +143,22 @@
     <Compile Include="frmInvoices.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
     </Compile>
     <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetPassword.Designer.vb">
+      <DependentUpon>frmSetPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetPassword.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InternalUser.vb" />
@@ -144,6 +188,18 @@
     <EmbeddedResource Include="dlgLogin.resx">
       <DependentUpon>dlgLogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminEditStaff.resx">
+      <DependentUpon>frmAdminEditStaff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminEditUser.resx">
+      <DependentUpon>frmAdminEditUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministration.resx">
+      <DependentUpon>frmAdministration.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUploadRoster.resx">
+      <DependentUpon>frmAdminUploadRoster.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAppointments.resx">
       <DependentUpon>frmAppointments.vb</DependentUpon>
     </EmbeddedResource>
@@ -153,8 +209,14 @@
     <EmbeddedResource Include="frmInvoices.resx">
       <DependentUpon>frmInvoices.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetPassword.resx">
+      <DependentUpon>frmSetPassword.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -174,6 +236,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Source\Repos\hmc-client\BiometricTesterApplication\BiometricScanner\BiometricScanner.vbproj">
+      <Project>{28afa630-d522-4b6e-bdc5-31ca36ac34ba}</Project>
+      <Name>BiometricScanner</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

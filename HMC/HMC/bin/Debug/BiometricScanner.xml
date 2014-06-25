@@ -1,0 +1,43 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+BiometricScanner
+</name>
+</assembly>
+<members>
+<member name="M:BiometricScanner.BiometricScanner.FingerPrint.#ctor(System.String,System.String,DPFP.Template)">
+	<summary>
+ FingerPrint stores the fpt file used in verification of fingerprints with DigitalPersona FingerPrint Scanner
+ </summary>
+	<param name="userId">The database identifier for the user</param>
+	<param name="fpt">The DigitalPersona "Template" of a fingerprint</param>
+	<param name="username">Friendly name of user associated to the fingerprint</param>
+	<remarks></remarks>
+</member><member name="T:BiometricScanner.BiometricScanner.FingerPrint">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="M:BiometricScanner.frmEnrollment.#ctor(System.String,System.String)">
+	<summary>
+ Creates Dialog for fingerprint registration dialog for registering fingerprint to a staff record
+ </summary>
+	<param name="user">Name of staff member the fingerprint will be registered too</param>
+	<param name="staff_id">the staff id associated with the staff member</param>
+	<remarks></remarks>
+</member><member name="P:BiometricScanner.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:BiometricScanner.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:BiometricScanner.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

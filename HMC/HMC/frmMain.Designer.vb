@@ -44,13 +44,14 @@ Partial Class frmMain
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.lblStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.AdministrationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ViewToolStripMenuItem, Me.WindowsToolStripMenuItem, Me.StaffToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ViewToolStripMenuItem, Me.WindowsToolStripMenuItem, Me.StaffToolStripMenuItem, Me.AdministrationToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(632, 24)
@@ -111,19 +112,19 @@ Partial Class frmMain
         'AppointmentsToolStripMenuItem
         '
         Me.AppointmentsToolStripMenuItem.Name = "AppointmentsToolStripMenuItem"
-        Me.AppointmentsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AppointmentsToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.AppointmentsToolStripMenuItem.Text = "Appointments"
         '
         'InvoicesToolStripMenuItem
         '
         Me.InvoicesToolStripMenuItem.Name = "InvoicesToolStripMenuItem"
-        Me.InvoicesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.InvoicesToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.InvoicesToolStripMenuItem.Text = "Invoices"
         '
         'ConsultationToolStripMenuItem
         '
         Me.ConsultationToolStripMenuItem.Name = "ConsultationToolStripMenuItem"
-        Me.ConsultationToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ConsultationToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.ConsultationToolStripMenuItem.Text = "Consultation"
         Me.ConsultationToolStripMenuItem.Visible = False
         '
@@ -137,20 +138,20 @@ Partial Class frmMain
         'LoginToolStripMenuItem
         '
         Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.LoginToolStripMenuItem.Text = "Login"
         '
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.LogoutToolStripMenuItem.Text = "Logout"
         Me.LogoutToolStripMenuItem.Visible = False
         '
         'MyDetailsToolStripMenuItem
         '
         Me.MyDetailsToolStripMenuItem.Name = "MyDetailsToolStripMenuItem"
-        Me.MyDetailsToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.MyDetailsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.MyDetailsToolStripMenuItem.Text = "My Details"
         Me.MyDetailsToolStripMenuItem.Visible = False
         '
@@ -176,6 +177,12 @@ Partial Class frmMain
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(39, 17)
         Me.lblStatus.Text = "Status"
+        '
+        'AdministrationToolStripMenuItem
+        '
+        Me.AdministrationToolStripMenuItem.Name = "AdministrationToolStripMenuItem"
+        Me.AdministrationToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
+        Me.AdministrationToolStripMenuItem.Text = "Administration"
         '
         'frmMain
         '
@@ -217,5 +224,6 @@ Partial Class frmMain
     Friend WithEvents LogoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MyDetailsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultationToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AdministrationToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
