@@ -174,7 +174,7 @@ Partial Class frmInvoices
         '
         Me.cmsInvoice.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MakePaymentToolStripMenuItem, Me.EditInvoiceToolStripMenuItem})
         Me.cmsInvoice.Name = "ContextMenuStrip1"
-        Me.cmsInvoice.Size = New System.Drawing.Size(154, 48)
+        Me.cmsInvoice.Size = New System.Drawing.Size(154, 70)
         '
         'MakePaymentToolStripMenuItem
         '

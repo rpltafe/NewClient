@@ -57,4 +57,12 @@ Public Class frmInvoices
             cmsInvoice.Show(dgvInvoice, dgvInvoice.PointToClient(Windows.Forms.Cursor.Position))
         End If
     End Sub
+
+    Private Sub MakePaymentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MakePaymentToolStripMenuItem.Click
+        Dim dialog As New dlgMakePayment
+        dialog.setup(dgvInvoice.CurrentRow)
+        If dialog.ShowDialog = Windows.Forms.DialogResult.OK Then
+            frmInvoices_Load(Me, New EventArgs)
+        End If
+    End Sub
 End Class

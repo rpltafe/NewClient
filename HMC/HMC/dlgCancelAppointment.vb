@@ -10,8 +10,8 @@ Public Class dlgCancelAppointment
         patientId = CInt(row.Cells("patient_id").Value)
         tbPatientName.Text = row.Cells("first_name").Value & " " & row.Cells("last_name").Value
         tbAppointmentId.Text = row.Cells("appointment_id").Value
-        tbDateTime.Text = row.Cells("time").Value.ToString().Substring(0, 5) & " " & row.Cells("date").Value
-        appDate = row.Cells("date").Value + row.Cells("time").Value
+        tbDateTime.Text = row.Cells("time").Value
+        appDate = row.Cells("time").Value
         Dim tomorrow As System.DateTime = Date.Now.Add(New TimeSpan(24, 0, 0))
         If appDate < Date.Now Then
             lblFeeMsg.Text = "Patient did not arrive?"

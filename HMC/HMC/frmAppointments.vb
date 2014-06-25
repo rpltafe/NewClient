@@ -16,9 +16,9 @@ Public Class frmAppointments
     End Sub
 
     Private Sub frmAppointments_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim sql = "SELECT patient.first_name, patient.last_name, appointment.date, appointment.time, " & _
+        Dim sql = "SELECT patient.first_name, patient.last_name, appointment.time, " & _
             "appointment.patient_id, appointment.appointment_id FROM appointment INNER JOIN patient ON " & _
-            "patient.patient_id = appointment.patient_id ORDER BY appointment.date"
+            "patient.patient_id = appointment.patient_id ORDER BY appointment.time"
         binder = New BindingSource()
         adapter = New MySqlDataAdapter(sql, My.Resources.connectionString)
 

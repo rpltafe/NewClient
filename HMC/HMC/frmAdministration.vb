@@ -116,7 +116,7 @@ Public Class frmAdministration
     End Sub
 
     Private Sub refreshStaff()
-        Dim cmd As New MySqlCommand("SELECT `staff`.`staff_id`, `staff`.`first_name`, `staff`.`last_name`, `staff`.`gender`, `staff`.`address`, `staff`.`dob`, `staff`.`phone`, (CASE WHEN admin <> 0 THEN 'True' ELSE 'False' END) As Admin, `staff`.`user_id`, user.username, user.email FROM staff LEFT JOIN user ON user.user_id=staff.user_id", MySQLConn)
+        Dim cmd As New MySqlCommand("SELECT `staff`.`staff_id`, `staff`.`first_name`, `staff`.`last_name`, `staff`.`gender`, `staff`.`address`, `staff`.`phone`, (CASE WHEN admin <> 0 THEN 'True' ELSE 'False' END) As Admin, `staff`.`user_id`, user.username, user.email FROM staff LEFT JOIN user ON user.user_id=staff.user_id", MySQLConn)
         Dim da = New MySqlDataAdapter(cmd)
         Dim dt = New DataTable()
         da.Fill(dt)
@@ -142,8 +142,8 @@ Public Class frmAdministration
     End Sub
 
     Private Sub refreshRoster()
-        'SELECT `staff`.`staff_id`,CONCAT(`staff`.first_name, ' ', `staff`.last_name) As StaffMember,UNIX_TIMESTAMP(`start_time`) as Timestamp,DATE(`start_time`) as StartDate, DATE_FORMAT(`start_time`,'%r') as StartTime, DATE(`end_time`) as EndDate, DATE_FORMAT(`end_time`,'%r') as EndTime FROM `availability` LEFT JOIN staff ON `availability`.staff_id=staff.staff_id WHERE DATE(`start_time`) = @date
-        Dim cmd As New MySqlCommand("SELECT `staff`.`staff_id`,CONCAT(`staff`.first_name, ' ', `staff`.last_name) As StaffMember,UNIX_TIMESTAMP(`start_time`) as Timestamp,DATE(`start_time`) as StartDate, DATE_FORMAT(`start_time`,'%r') as StartTime, DATE(`end_time`) as EndDate, DATE_FORMAT(`end_time`,'%r') as EndTime FROM `availability` LEFT JOIN staff ON `availability`.staff_id=staff.staff_id WHERE DATE(`start_time`) = STR_TO_DATE(@date, '%d/%m/%Y') OR DATE(`end_time`) = STR_TO_DATE(@date, '%d/%m/%Y')", MySQLConn)
+        'Dim cmd As New MySqlCommand("SELECT `staff`.`staff_id`,CONCAT(`staff`.first_name, ' ', `staff`.last_name) As StaffMember,UNIX_TIMESTAMP(`start_time`) as Timestamp,DATE(`start_time`) as StartDate, DATE_FORMAT(`start_time`,'%r') as StartTime, DATE(`end_time`) as EndDate, DATE_FORMAT(`end_time`,'%r') as EndTime FROM `availability` LEFT JOIN staff ON `availability`.staff_id=staff.staff_id WHERE DATE(`start_time`) = STR_TO_DATE(@date, '%d/%m/%Y') OR DATE(`end_time`) = STR_TO_DATE(@date, '%d/%m/%Y')", MySQLConn)
+        Dim cmd As New MySqlCommand("SELECT `staff`.`staff_id`,CONCAT(`staff`.first_name, ' ', `staff`.last_name) As StaffMember,UNIX_TIMESTAMP(`start_time`) as Timestamp,DATE(`start_time`) as StartDate, DATE_FORMAT(`start_time`,'%r') as StartTime, DATE(`end_time`) as EndDate, DATE_FORMAT(`end_time`,'%r') as EndTime FROM `availability` LEFT JOIN staff ON `availability`.staff_id=staff.staff_id WHERE `date` = STR_TO_DATE(@date, '%d/%m/%Y')", MySQLConn)
         cmd.Parameters.AddWithValue("@date", dateAvailability.Value.ToShortDateString)
         Dim da = New MySqlDataAdapter(cmd)
         Dim dt = New DataTable()

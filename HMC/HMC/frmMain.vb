@@ -127,7 +127,7 @@ Public Class frmMain
         cmd.ExecuteNonQuery()
         MySQLConn.Close()
 
-        Dim url As String = String.Format("http://localhost:8080/holistic/login.jsp?token={0}&staff={1}", token, Me._user.StaffId)
+        Dim url As String = String.Format("http://localhost:8080/examples/login.jsp?token={0}&staff={1}", token, Me._user.StaffId)
         Dim pathToChrome As String = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
         If File.Exists(pathToChrome) Then
             Process.Start(pathToChrome, url) 'opens in chrome

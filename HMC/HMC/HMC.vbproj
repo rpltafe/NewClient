@@ -94,6 +94,10 @@
     <Compile Include="dlgInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="dlgMakePayment.Designer.vb" />
+    <Compile Include="dlgMakePayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAdminEditStaff.Designer.vb">
       <DependentUpon>frmAdminEditStaff.vb</DependentUpon>
     </Compile>
@@ -194,6 +198,7 @@
     <EmbeddedResource Include="dlgLogin.resx">
       <DependentUpon>dlgLogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="dlgMakePayment.resx" />
     <EmbeddedResource Include="frmAdminEditStaff.resx">
       <DependentUpon>frmAdminEditStaff.vb</DependentUpon>
     </EmbeddedResource>
