@@ -64,10 +64,12 @@ Public Class frmMain
         CloseAllChildren()
         MyDetailsToolStripMenuItem.Visible = False
         LogoutToolStripMenuItem.Visible = False
+        AdministrationToolStripMenuItem.Visible = False
     End Sub
 
     Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
         LogOut()
+        performLogin()
     End Sub
 
     Private Sub AppointmentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AppointmentsToolStripMenuItem.Click
@@ -108,6 +110,7 @@ Public Class frmMain
                 Me._user = New InternalUser(login.getStaffID)
                 MyDetailsToolStripMenuItem.Visible = True
                 LogoutToolStripMenuItem.Visible = True
+                AdministrationToolStripMenuItem.Visible = Me._user.isAdmin
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Error during login!")
             End Try
@@ -148,5 +151,12 @@ Public Class frmMain
     Private Sub AdministrationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministrationToolStripMenuItem.Click
         frmAdministration.bs = Me.bs
         frmAdministration.Show()
+    End Sub
+
+    Private Sub ViewShiftsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewShiftsToolStripMenuItem.Click
+        Dim shift As frmViewTimecard = New frmViewTimecard(_user.StaffId)
+
+        shift.MdiParent = Me
+        shift.Show()
     End Sub
 End Class

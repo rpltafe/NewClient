@@ -40,11 +40,12 @@ Partial Class frmMain
         Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MyDetailsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdministrationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip = New System.Windows.Forms.ToolStrip()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.lblStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.AdministrationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewShiftsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -130,7 +131,7 @@ Partial Class frmMain
         '
         'StaffToolStripMenuItem
         '
-        Me.StaffToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem, Me.LogoutToolStripMenuItem, Me.MyDetailsToolStripMenuItem})
+        Me.StaffToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem, Me.LogoutToolStripMenuItem, Me.MyDetailsToolStripMenuItem, Me.ViewShiftsToolStripMenuItem})
         Me.StaffToolStripMenuItem.Name = "StaffToolStripMenuItem"
         Me.StaffToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
         Me.StaffToolStripMenuItem.Text = "Staff"
@@ -155,6 +156,13 @@ Partial Class frmMain
         Me.MyDetailsToolStripMenuItem.Text = "My Details"
         Me.MyDetailsToolStripMenuItem.Visible = False
         '
+        'AdministrationToolStripMenuItem
+        '
+        Me.AdministrationToolStripMenuItem.Name = "AdministrationToolStripMenuItem"
+        Me.AdministrationToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
+        Me.AdministrationToolStripMenuItem.Text = "Administration"
+        Me.AdministrationToolStripMenuItem.Visible = False
+        '
         'ToolStrip
         '
         Me.ToolStrip.Location = New System.Drawing.Point(0, 24)
@@ -178,11 +186,11 @@ Partial Class frmMain
         Me.lblStatus.Size = New System.Drawing.Size(39, 17)
         Me.lblStatus.Text = "Status"
         '
-        'AdministrationToolStripMenuItem
+        'ViewShiftsToolStripMenuItem
         '
-        Me.AdministrationToolStripMenuItem.Name = "AdministrationToolStripMenuItem"
-        Me.AdministrationToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
-        Me.AdministrationToolStripMenuItem.Text = "Administration"
+        Me.ViewShiftsToolStripMenuItem.Name = "ViewShiftsToolStripMenuItem"
+        Me.ViewShiftsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ViewShiftsToolStripMenuItem.Text = "View Shifts"
         '
         'frmMain
         '
@@ -225,5 +233,6 @@ Partial Class frmMain
     Friend WithEvents MyDetailsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultationToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AdministrationToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ViewShiftsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

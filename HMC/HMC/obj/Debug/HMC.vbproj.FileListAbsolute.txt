@@ -61,3 +61,4 @@ C:\Users\Pete\Documents\GitHub\NewClient\HMC\HMC\obj\Debug\HMC.frmSetPassword.re
 C:\Users\Pete\Documents\GitHub\NewClient\HMC\HMC\bin\Debug\mysql.data.entity.dll
 C:\Users\Pete\Documents\GitHub\NewClient\HMC\HMC\bin\Debug\mysql.visualstudio.dll
 C:\Users\Pete\Documents\GitHub\NewClient\HMC\HMC\bin\Debug\mysql.web.dll
+C:\Users\Pete\Documents\GitHub\NewClient\HMC\HMC\obj\Debug\HMC.frmViewTimecard.resources

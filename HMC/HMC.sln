@@ -7,8 +7,6 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HMC", "HMC\HMC.vbproj", "{F
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BiometricScanner", "..\..\..\..\Source\Repos\hmc-client\BiometricTesterApplication\BiometricScanner\BiometricScanner.vbproj", "{28AFA630-D522-4B6E-BDC5-31CA36AC34BA}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "hmc-Prototype", "..\..\..\..\Source\Repos\hmc-client\hmc-Prototype\hmc-Prototype\hmc-Prototype.vbproj", "{E2CE0890-FE3D-475B-B35E-B7A76B27423D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{28AFA630-D522-4B6E-BDC5-31CA36AC34BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28AFA630-D522-4B6E-BDC5-31CA36AC34BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28AFA630-D522-4B6E-BDC5-31CA36AC34BA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E2CE0890-FE3D-475B-B35E-B7A76B27423D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E2CE0890-FE3D-475B-B35E-B7A76B27423D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E2CE0890-FE3D-475B-B35E-B7A76B27423D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E2CE0890-FE3D-475B-B35E-B7A76B27423D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

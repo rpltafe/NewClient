@@ -4,6 +4,7 @@ Public Class InternalUser
 
     Private _UserId As Integer, _StaffId As Integer, _PractitionerId As Integer
     Private _Username As String, _FirstName As String, _LastName As String
+    Private _admin As Boolean = False
 
     Public Property UserId As Integer
         Get
@@ -59,6 +60,17 @@ Public Class InternalUser
         End Set
     End Property
 
+    Public Property isAdmin As Boolean
+        Get
+            Return _admin
+        End Get
+        Set(value As Boolean)
+            _admin = value
+        End Set
+    End Property
+
+
+
     Public ReadOnly Property IsPractitioner As Boolean
         Get
             Return PractitionerId > 0
@@ -71,7 +83,7 @@ Public Class InternalUser
 
     Public Sub New(staffId As String)
         Dim sql As String = "SELECT user.user_id, staff.staff_id, practitioner.practitioner_id, " & _
-                    "user.username, staff.first_name, staff.last_name FROM user LEFT JOIN staff ON staff.user_id " & _
+                    "user.username, staff.first_name, staff.last_name, staff.admin FROM user LEFT JOIN staff ON staff.user_id " & _
                     "= user.user_id LEFT JOIN practitioner ON practitioner.staff_id = staff.staff_id WHERE " & _
                     "staff.staff_id = @staffid"
 
@@ -100,6 +112,7 @@ Public Class InternalUser
                         .Username = reader.GetString("username")
                         .FirstName = reader.GetString("first_name")
                         .LastName = reader.GetString("last_name")
+                        .isAdmin = reader.GetBoolean("admin")
                     End With
                 Else
                     Throw New Exception("Could not find user in database!")

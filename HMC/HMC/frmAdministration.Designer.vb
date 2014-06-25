@@ -39,13 +39,17 @@ Partial Class frmAdministration
         Me.dataGridUsers = New System.Windows.Forms.DataGridView()
         Me.password_hash = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tabRostering = New System.Windows.Forms.TabPage()
-        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.splitRostering = New System.Windows.Forms.SplitContainer()
         Me.lblAvailability = New System.Windows.Forms.Label()
         Me.btnUploadRoster = New System.Windows.Forms.Button()
         Me.dateAvailability = New System.Windows.Forms.DateTimePicker()
         Me.btnRefreshRoster = New System.Windows.Forms.Button()
         Me.dataGridRoster = New System.Windows.Forms.DataGridView()
         Me.Timestamp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tabShifts = New System.Windows.Forms.TabPage()
+        Me.splitShifts = New System.Windows.Forms.SplitContainer()
+        Me.btnRefreshShifts = New System.Windows.Forms.Button()
+        Me.dataGridShifts = New System.Windows.Forms.DataGridView()
         Me.tabControlAdministration.SuspendLayout()
         Me.tabStaff.SuspendLayout()
         CType(Me.splitStaff, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,11 +64,17 @@ Partial Class frmAdministration
         Me.splitUsers.SuspendLayout()
         CType(Me.dataGridUsers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabRostering.SuspendLayout()
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainer1.Panel1.SuspendLayout()
-        Me.SplitContainer1.Panel2.SuspendLayout()
-        Me.SplitContainer1.SuspendLayout()
+        CType(Me.splitRostering, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.splitRostering.Panel1.SuspendLayout()
+        Me.splitRostering.Panel2.SuspendLayout()
+        Me.splitRostering.SuspendLayout()
         CType(Me.dataGridRoster, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabShifts.SuspendLayout()
+        CType(Me.splitShifts, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.splitShifts.Panel1.SuspendLayout()
+        Me.splitShifts.Panel2.SuspendLayout()
+        Me.splitShifts.SuspendLayout()
+        CType(Me.dataGridShifts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabControlAdministration
@@ -72,6 +82,7 @@ Partial Class frmAdministration
         Me.tabControlAdministration.Controls.Add(Me.tabStaff)
         Me.tabControlAdministration.Controls.Add(Me.tabUsers)
         Me.tabControlAdministration.Controls.Add(Me.tabRostering)
+        Me.tabControlAdministration.Controls.Add(Me.tabShifts)
         Me.tabControlAdministration.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tabControlAdministration.Location = New System.Drawing.Point(0, 0)
         Me.tabControlAdministration.Name = "tabControlAdministration"
@@ -241,6 +252,7 @@ Partial Class frmAdministration
         Me.dataGridUsers.AllowUserToAddRows = False
         Me.dataGridUsers.AllowUserToDeleteRows = False
         Me.dataGridUsers.AllowUserToOrderColumns = True
+        Me.dataGridUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dataGridUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dataGridUsers.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.password_hash})
         Me.dataGridUsers.Dock = System.Windows.Forms.DockStyle.Fill
@@ -262,7 +274,7 @@ Partial Class frmAdministration
         '
         'tabRostering
         '
-        Me.tabRostering.Controls.Add(Me.SplitContainer1)
+        Me.tabRostering.Controls.Add(Me.splitRostering)
         Me.tabRostering.Location = New System.Drawing.Point(4, 22)
         Me.tabRostering.Name = "tabRostering"
         Me.tabRostering.Padding = New System.Windows.Forms.Padding(3)
@@ -271,28 +283,28 @@ Partial Class frmAdministration
         Me.tabRostering.Text = "Rostering"
         Me.tabRostering.UseVisualStyleBackColor = True
         '
-        'SplitContainer1
+        'splitRostering
         '
-        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
-        Me.SplitContainer1.IsSplitterFixed = True
-        Me.SplitContainer1.Location = New System.Drawing.Point(3, 3)
-        Me.SplitContainer1.Name = "SplitContainer1"
-        Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
+        Me.splitRostering.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.splitRostering.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
+        Me.splitRostering.IsSplitterFixed = True
+        Me.splitRostering.Location = New System.Drawing.Point(3, 3)
+        Me.splitRostering.Name = "splitRostering"
+        Me.splitRostering.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
-        'SplitContainer1.Panel1
+        'splitRostering.Panel1
         '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.lblAvailability)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.btnUploadRoster)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.dateAvailability)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.btnRefreshRoster)
+        Me.splitRostering.Panel1.Controls.Add(Me.lblAvailability)
+        Me.splitRostering.Panel1.Controls.Add(Me.btnUploadRoster)
+        Me.splitRostering.Panel1.Controls.Add(Me.dateAvailability)
+        Me.splitRostering.Panel1.Controls.Add(Me.btnRefreshRoster)
         '
-        'SplitContainer1.Panel2
+        'splitRostering.Panel2
         '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.dataGridRoster)
-        Me.SplitContainer1.Size = New System.Drawing.Size(774, 454)
-        Me.SplitContainer1.SplitterDistance = 30
-        Me.SplitContainer1.TabIndex = 1
+        Me.splitRostering.Panel2.Controls.Add(Me.dataGridRoster)
+        Me.splitRostering.Size = New System.Drawing.Size(774, 454)
+        Me.splitRostering.SplitterDistance = 30
+        Me.splitRostering.TabIndex = 1
         '
         'lblAvailability
         '
@@ -336,6 +348,7 @@ Partial Class frmAdministration
         Me.dataGridRoster.AllowUserToAddRows = False
         Me.dataGridRoster.AllowUserToDeleteRows = False
         Me.dataGridRoster.AllowUserToOrderColumns = True
+        Me.dataGridRoster.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dataGridRoster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dataGridRoster.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Timestamp})
         Me.dataGridRoster.Dock = System.Windows.Forms.DockStyle.Fill
@@ -354,6 +367,63 @@ Partial Class frmAdministration
         Me.Timestamp.Name = "Timestamp"
         Me.Timestamp.ReadOnly = True
         Me.Timestamp.Visible = False
+        '
+        'tabShifts
+        '
+        Me.tabShifts.Controls.Add(Me.splitShifts)
+        Me.tabShifts.Location = New System.Drawing.Point(4, 22)
+        Me.tabShifts.Name = "tabShifts"
+        Me.tabShifts.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabShifts.Size = New System.Drawing.Size(780, 460)
+        Me.tabShifts.TabIndex = 3
+        Me.tabShifts.Text = "Shifts Timecard"
+        Me.tabShifts.UseVisualStyleBackColor = True
+        '
+        'splitShifts
+        '
+        Me.splitShifts.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.splitShifts.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
+        Me.splitShifts.IsSplitterFixed = True
+        Me.splitShifts.Location = New System.Drawing.Point(3, 3)
+        Me.splitShifts.Name = "splitShifts"
+        Me.splitShifts.Orientation = System.Windows.Forms.Orientation.Horizontal
+        '
+        'splitShifts.Panel1
+        '
+        Me.splitShifts.Panel1.Controls.Add(Me.btnRefreshShifts)
+        '
+        'splitShifts.Panel2
+        '
+        Me.splitShifts.Panel2.Controls.Add(Me.dataGridShifts)
+        Me.splitShifts.Size = New System.Drawing.Size(774, 454)
+        Me.splitShifts.SplitterDistance = 30
+        Me.splitShifts.TabIndex = 2
+        '
+        'btnRefreshShifts
+        '
+        Me.btnRefreshShifts.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnRefreshShifts.Location = New System.Drawing.Point(696, 3)
+        Me.btnRefreshShifts.Name = "btnRefreshShifts"
+        Me.btnRefreshShifts.Size = New System.Drawing.Size(75, 23)
+        Me.btnRefreshShifts.TabIndex = 1
+        Me.btnRefreshShifts.Text = "Refresh"
+        Me.btnRefreshShifts.UseVisualStyleBackColor = True
+        '
+        'dataGridShifts
+        '
+        Me.dataGridShifts.AllowUserToAddRows = False
+        Me.dataGridShifts.AllowUserToDeleteRows = False
+        Me.dataGridShifts.AllowUserToOrderColumns = True
+        Me.dataGridShifts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dataGridShifts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataGridShifts.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dataGridShifts.Location = New System.Drawing.Point(0, 0)
+        Me.dataGridShifts.MultiSelect = False
+        Me.dataGridShifts.Name = "dataGridShifts"
+        Me.dataGridShifts.ReadOnly = True
+        Me.dataGridShifts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dataGridShifts.Size = New System.Drawing.Size(774, 420)
+        Me.dataGridShifts.TabIndex = 0
         '
         'frmAdministration
         '
@@ -377,12 +447,18 @@ Partial Class frmAdministration
         Me.splitUsers.ResumeLayout(False)
         CType(Me.dataGridUsers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabRostering.ResumeLayout(False)
-        Me.SplitContainer1.Panel1.ResumeLayout(False)
-        Me.SplitContainer1.Panel1.PerformLayout()
-        Me.SplitContainer1.Panel2.ResumeLayout(False)
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainer1.ResumeLayout(False)
+        Me.splitRostering.Panel1.ResumeLayout(False)
+        Me.splitRostering.Panel1.PerformLayout()
+        Me.splitRostering.Panel2.ResumeLayout(False)
+        CType(Me.splitRostering, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.splitRostering.ResumeLayout(False)
         CType(Me.dataGridRoster, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabShifts.ResumeLayout(False)
+        Me.splitShifts.Panel1.ResumeLayout(False)
+        Me.splitShifts.Panel2.ResumeLayout(False)
+        CType(Me.splitShifts, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.splitShifts.ResumeLayout(False)
+        CType(Me.dataGridShifts, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -403,11 +479,15 @@ Partial Class frmAdministration
     Friend WithEvents dataGridUsers As System.Windows.Forms.DataGridView
     Friend WithEvents password_hash As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents tabRostering As System.Windows.Forms.TabPage
-    Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
+    Friend WithEvents splitRostering As System.Windows.Forms.SplitContainer
     Friend WithEvents btnUploadRoster As System.Windows.Forms.Button
     Friend WithEvents dateAvailability As System.Windows.Forms.DateTimePicker
     Friend WithEvents btnRefreshRoster As System.Windows.Forms.Button
     Friend WithEvents dataGridRoster As System.Windows.Forms.DataGridView
     Friend WithEvents lblAvailability As System.Windows.Forms.Label
     Friend WithEvents Timestamp As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents tabShifts As System.Windows.Forms.TabPage
+    Friend WithEvents splitShifts As System.Windows.Forms.SplitContainer
+    Friend WithEvents btnRefreshShifts As System.Windows.Forms.Button
+    Friend WithEvents dataGridShifts As System.Windows.Forms.DataGridView
 End Class

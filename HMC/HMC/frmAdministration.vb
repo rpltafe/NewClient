@@ -5,6 +5,7 @@ Public Class frmAdministration
     Private staffBindingSource As BindingSource = New BindingSource()
     Private userBindingSource As BindingSource = New BindingSource()
     Private availabilityBindingSource As BindingSource = New BindingSource()
+    Private shiftBindingSource As BindingSource = New BindingSource()
     Private MySQLConn As MySqlConnection = New MySqlConnection(My.Resources.connectionString)
 
     Private Sub frmAdministration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -13,6 +14,7 @@ Public Class frmAdministration
         refreshStaff()
         refreshUsers()
         refreshRoster()
+        refreshShifts()
     End Sub
 
     Private Sub dataGridStaff_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridStaff.CellDoubleClick
@@ -109,6 +111,10 @@ Public Class frmAdministration
         refreshRoster()
     End Sub
 
+    Private Sub btnRefreshShifts_Click(sender As Object, e As EventArgs) Handles btnRefreshShifts.Click
+        refreshShifts()
+    End Sub
+
     Private Sub refreshStaff()
         Dim cmd As New MySqlCommand("SELECT `staff`.`staff_id`, `staff`.`first_name`, `staff`.`last_name`, `staff`.`gender`, `staff`.`address`, `staff`.`dob`, `staff`.`phone`, (CASE WHEN admin <> 0 THEN 'True' ELSE 'False' END) As Admin, `staff`.`user_id`, user.username, user.email FROM staff LEFT JOIN user ON user.user_id=staff.user_id", MySQLConn)
         Dim da = New MySqlDataAdapter(cmd)
@@ -178,5 +184,19 @@ Public Class frmAdministration
         user.email = row.Cells("email").Value.ToString
         user.ShowDialog()
         refreshUsers()
+    End Sub
+
+    Private Sub refreshShifts()
+        'SELECT `staff`.`staff_id`,CONCAT(`staff`.first_name, ' ', `staff`.last_name) As StaffMember,UNIX_TIMESTAMP(`start_time`) as Timestamp,DATE(`start_time`) as StartDate, DATE_FORMAT(`start_time`,'%r') as StartTime, DATE(`end_time`) as EndDate, DATE_FORMAT(`end_time`,'%r') as EndTime FROM `availability` LEFT JOIN staff ON `availability`.staff_id=staff.staff_id WHERE DATE(`start_time`) = @date
+        Dim cmd As New MySqlCommand("SELECT CONCAT(`staff`.first_name, ' ', `staff`.last_name) As name, shift.start_time, shift.end_time , TIMEDIFF(`end_time`,`start_time`) as Total FROM `shift` INNER JOIN `staff` ON `staff`.`staff_id`=`shift`.`staff_id`", MySQLConn)
+        Dim da = New MySqlDataAdapter(cmd)
+        Dim dt = New DataTable()
+        da.Fill(dt)
+        shiftBindingSource.DataSource = dt ' here assign the DataTable'
+
+        With Me.dataGridShifts
+            .AutoGenerateColumns = True
+            .DataSource = shiftBindingSource
+        End With
     End Sub
 End Class
